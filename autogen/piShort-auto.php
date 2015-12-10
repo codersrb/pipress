@@ -36,9 +36,9 @@ function getCardCategory($category) {
 		return sendGET(defaultHeader(), $data, $newPath);
 }
 
-function getCardsByCategory($category, $limit = 10, $page = 1) {
+function getGiftCardsInCategory($category, $limit = 10, $page = 1) {
 		$method = "GET";
-		$endpoint = endpointWith("/api/v1/categories/{category}/cards", $method);
+		$endpoint = endpointWith("/api/v1/categories/{category}/giftcards", $method);
 		global $verbose;
 		checkAuth();
 		
@@ -280,7 +280,7 @@ function updateOrCreateNewMember($member, $firstName = false, $lastName = false,
 		return sendPUT(defaultHeader(), $data, $newPath);
 }
 
-function convertDollarsToPiPoints($member, $token, $cardNumber, $month, $year, $security, $source, $name, $addressLine1, $addressLine2, $addressCity, $addressState, $addressZip, $addressCountry, $last4, $expMonth, $expYear, $amount) {
+function convertDollarsToPiPoints($member, $token, $cardNumber, $month, $year, $security, $source, $amount) {
 		$method = "POST";
 		$endpoint = endpointWith("/api/v1/members/{member}/credittransactions", $method);
 		global $verbose;
@@ -293,17 +293,27 @@ function convertDollarsToPiPoints($member, $token, $cardNumber, $month, $year, $
 	"year" => $year,
 	"security" => $security,
 	"source" => $source,
-	"name" => $name,
-	"addressLine1" => $addressLine1,
-	"addressLine2" => $addressLine2,
-	"addressCity" => $addressCity,
-	"addressState" => $addressState,
-	"addressZip" => $addressZip,
-	"addressCountry" => $addressCountry,
-	"last4" => $last4,
-	"expMonth" => $expMonth,
-	"expYear" => $expYear,
 	"amount" => $amount
+		);
+		
+		if ($method != "GET") {
+			$data = formattedParametersWithData($endpoint, $data);
+		}
+		
+		$newPath = fillEndpointPathWithRequirements($endpoint, $data);
+		$data = cleanEndpointRequirementsFromData($endpoint, $data);
+		return sendPOST(defaultHeader(), $data, $newPath);
+}
+
+function addGiftCardToMember($member, $brand, $productId) {
+		$method = "POST";
+		$endpoint = endpointWith("/api/v1/members/{member}/giftcards", $method);
+		global $verbose;
+		checkAuth();
+		
+		$data = array("member" => $member,
+	"brand" => $brand,
+	"productId" => $productId
 		);
 		
 		if ($method != "GET") {
@@ -351,26 +361,6 @@ function getMemberPoints($member) {
 		return sendGET(defaultHeader(), $data, $newPath);
 }
 
-function purchaseGiftCard($member, $brand, $productId) {
-		$method = "POST";
-		$endpoint = endpointWith("/api/v1/members/{member}/purchasegiftcards", $method);
-		global $verbose;
-		checkAuth();
-		
-		$data = array("member" => $member,
-	"brand" => $brand,
-	"productId" => $productId
-		);
-		
-		if ($method != "GET") {
-			$data = formattedParametersWithData($endpoint, $data);
-		}
-		
-		$newPath = fillEndpointPathWithRequirements($endpoint, $data);
-		$data = cleanEndpointRequirementsFromData($endpoint, $data);
-		return sendPOST(defaultHeader(), $data, $newPath);
-}
-
 function getOutstandingReferrals($member, $filter, $offset = 1, $limit = 5) {
 		$method = "GET";
 		$endpoint = endpointWith("/api/v1/members/{member}/referrals", $method);
@@ -392,7 +382,7 @@ function getOutstandingReferrals($member, $filter, $offset = 1, $limit = 5) {
 		return sendGET(defaultHeader(), $data, $newPath);
 }
 
-function createReferralForMember($member, $referral, $pointsToTransfer, $email, $memberReferral = false, $pointTransferReferral = false) {
+function createReferralForMember($member, $referral, $memberReferral = false, $pointTransferReferral = false) {
 		$method = "POST";
 		$endpoint = endpointWith("/api/v1/members/{member}/referrals", $method);
 		global $verbose;
@@ -401,9 +391,7 @@ function createReferralForMember($member, $referral, $pointsToTransfer, $email, 
 		$data = array("member" => $member,
 	"memberReferral" => $memberReferral,
 	"referral" => $referral,
-	"pointTransferReferral" => $pointTransferReferral,
-	"pointsToTransfer" => $pointsToTransfer,
-	"email" => $email
+	"pointTransferReferral" => $pointTransferReferral
 		);
 		
 		if ($method != "GET") {
@@ -718,7 +706,6 @@ function getToken($client_secret, $client_id, $grant_type, $username = false, $p
 		
 		$newPath = fillEndpointPathWithRequirements($endpoint, $data);
 		$data = cleanEndpointRequirementsFromData($endpoint, $data);
-		
 		return sendGET(defaultHeader(), $data, $newPath);
 }
 

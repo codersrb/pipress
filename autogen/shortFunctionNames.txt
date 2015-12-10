@@ -33,3 +33,5 @@
 /api/v1/referrals->POST->redeemReferral
 /api/v1/token->GET->getToken
 /api/v1/token->POST->loginUser
+/api/v1/categories/{category}/giftcards->GET->getGiftCardsInCategory
+/api/v1/members/{member}/giftcards->POST->addGiftCardToMember

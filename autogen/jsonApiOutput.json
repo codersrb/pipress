@@ -1,2672 +1,2742 @@
-[  
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/categories",
-      "Documentation":"Gets a collection of Categories.",
-      "Filters":[  
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Limits the number of Categories to return",
-               "Default":10
-            }
-         },
-         {  
-            "Name":"page",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Which page to request",
-               "Default":1
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/categories/{category}",
-      "Documentation":"Gets a specific category",
-      "Requirements":[  
-         {  
-            "Name":"category",
-            "Requirement":"",
-            "Type":"Category",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Name",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/categories/{category}/cards",
-      "Documentation":"Gets a list of Cards associated with a category",
-      "Requirements":[  
-         {  
-            "Name":"category",
-            "Requirement":"",
-            "Type":"Category",
-            "Description":""
-         }
-      ],
-      "Filters":[  
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Limits the number of Categories to return",
-               "Default":10
-            }
-         },
-         {  
-            "Name":"page",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Which page to request",
-               "Default":1
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/giftcards",
-      "Filters":[  
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Limits the number of Categories to return",
-               "Default":10
-            }
-         },
-         {  
-            "Name":"page",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Which page to request",
-               "Default":1
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned on Success"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/giftcards/{card}",
-      "Requirements":[  
-         {  
-            "Name":"card",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Card Id or Brand ID"
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"piPoints",
-            "Type":"array",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"CardholderAgreementUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"PrivacyPolicyUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ShoppingCartUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"TermsAndConditionsUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"CustomImageTermsAndConditionsHtml",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"CustomImageTermsAndConditionsUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"FaqUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BrandWebsiteUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Alias",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"CardSampleUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LogoHorizontalImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LogoImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LogoThumbnailImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LogoVerticalImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BarcodeType",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"CurrencyCultureCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"DatetimeCultureCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"DefaultCountryCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LanguageCultureCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LegalDisclaimer",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Description",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Name",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"NumericId",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"PurchaseFee",
-            "Type":"float",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"SupportEmailAddress",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"SupportsVariableAmountDenominations",
-            "Type":"boolean",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"VariableAmountDenominationMaximumValue",
-            "Type":"float",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"VariableAmountDenominationMinimumValue",
-            "Type":"float",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BillingCounties",
-            "Type":"array",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BillingStates[]",
-            "Type":"array of strings",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned on Success"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Requested Brand Not Found"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/giftcards/{card}/cardimages",
-      "Documentation":"Gets a list of Cards associated with a category",
-      "Requirements":[  
-         {  
-            "Name":"card",
-            "Requirement":"",
-            "Type":"Card",
-            "Description":""
-         }
-      ],
-      "Filters":[  
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Limits the number of rows to return",
-               "Default":10
-            }
-         },
-         {  
-            "Name":"page",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Page of result set to return",
-               "Default":1
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/giftcards/{card}/cardimages/{cardImage}",
-      "Requirements":[  
-         {  
-            "Name":"card",
-            "Requirement":"",
-            "Type":"Card",
-            "Description":""
-         },
-         {  
-            "Name":"cardImage",
-            "Requirement":"",
-            "Type":"CardImage",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"CustomerCharge",
-            "Type":"float",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ImageCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ImageFileName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"IsCustomUpload",
-            "Type":"boolean",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LastModifiedDate",
-            "Type":"DateTime",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"SortOrder",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ThumbnailImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ImageType",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members",
-      "Documentation":"List all members",
-      "Filters":[  
-         {  
-            "Name":"offset",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Offset from which to start listing members."
-            }
-         },
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"How many members to return.",
-               "Default":5
-            }
-         },
-         {  
-            "Name":"city",
-            "Information":{  
-               "Requirement":"\\S+",
-               "Description":"Filter By City."
-            }
-         },
-         {  
-            "Name":"state",
-            "Information":{  
-               "Requirement":"\\S+",
-               "Description":"Filter By State."
-            }
-         },
-         {  
-            "Name":"email",
-            "Information":{  
-               "Requirement":"^.+\\@.+\\..+",
-               "Description":"Filter By Email."
-            }
-         },
-         {  
-            "Name":"firstName",
-            "Information":{  
-               "Requirement":"\\S+",
-               "Description":"Filter By First Name."
-            }
-         },
-         {  
-            "Name":"lastName",
-            "Information":{  
-               "Requirement":"\\S+",
-               "Description":"Filter By Last Name."
-            }
-         },
-         {  
-            "Name":"mobileNumber",
-            "Information":{  
-               "Requirement":"\\S+",
-               "Description":"Filter By Mobile Number."
-            }
-         },
-         {  
-            "Name":"phoneNumber",
-            "Information":{  
-               "Requirement":"\\S+",
-               "Description":"Filter By Phone Number."
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned when successful"
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/members",
-      "Documentation":"Create a Member from the submitted data. Returns Registration token, to\nbe sent to user.\n\nExample Create Account\n\n {\n \"firstName\": \"Mickey\",\n \"lastName\" : \"Mouse\",\n \"email\" : \"mickey@disney.com\"\n }",
-      "Example Create Account":"{\n \"firstName\": \"Mickey\",\n \"lastName\" : \"Mouse\",\n \"email\" : \"mickey@disney.com\"\n }",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Email or Id of Member"
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"firstName",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"lastName",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"mobileNumber",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"phoneNumber",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"streetAddress",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"streetAddress2",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"city",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"state",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"country",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"zipPostalCode",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"email",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"username",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"username",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"email",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"FirstName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LastName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"MobileNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress2",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"City",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"State",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Country",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ZipPostalCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":400,
-            "Description":"Returned when the form has errors"
-         }
-      ]
-   },
-   {  
-      "Method":"DELETE",
-      "Path":"/api/v1/members/{member}",
-      "Documentation":"Removes Existing Member.",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Email or Id of Member"
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":204,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Return when member not found."
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Email or Id of Member"
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"username",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"email",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"FirstName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LastName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"MobileNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress2",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"City",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"State",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Country",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ZipPostalCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Return when successful"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Return when the member is not found"
-         }
-      ]
-   },
-   {  
-      "Method":"PATCH",
-      "Path":"/api/v1/members/{member}",
-      "Documentation":"Update existing member from the submitted data.\n\nUpdates a Member Record\n\n {\n \"streetAddress\" : \"12345 Nowhere Rd.\"\n }",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Email or Id of Member"
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"firstName",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"lastName",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"mobileNumber",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"phoneNumber",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"streetAddress",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"streetAddress2",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"city",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"state",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"country",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"zipPostalCode",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"username",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"email",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"FirstName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LastName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"MobileNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress2",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"City",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"State",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Country",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ZipPostalCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":204,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":400,
-            "Description":"Returned when the form has errors"
-         }
-      ]
-   },
-   {  
-      "Method":"PUT",
-      "Path":"/api/v1/members/{member}",
-      "Documentation":"Update existing member from the submitted data or create a new member at a specific location.\n\nExample of Updating a member\n\n {\n \"mobileNumber\" : \"619-492-2222\"\n }\n\n\nExample of Inserting a member\n\n {\n \"firstName\" : \"Mickey\",\n \"lastName\" : \"Mouse\",\n \"email\" : \"mickey@disney.com\"\n }",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Email or Id of Member"
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"firstName",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"lastName",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"mobileNumber",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"phoneNumber",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"streetAddress",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"streetAddress2",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"city",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"state",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"country",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"zipPostalCode",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"username",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"email",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"FirstName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LastName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"MobileNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress2",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"City",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"State",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Country",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ZipPostalCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":201,
-            "Description":"Returned when the Member is created"
-         },
-         {  
-            "Status Code":204,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":400,
-            "Description":"Returned when the form has errors"
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/members/{member}/credittransactions",
-      "Documentation":"Converts Dollars form Credit Card to PiPoints",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"string|integer",
-            "Description":"Member to purchase points for"
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"token",
-            "Type":"object (StripeWidget)",
-            "Required?":true,
-            "Format":"",
-            "Description":"Token provided by Stripe"
-         },
-         {  
-            "Parameter":"token[cardNumber]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"CreditCard Number"
-         },
-         {  
-            "Parameter":"token[month]",
-            "Type":"choice",
-            "Required?":true,
-            "Format":{  
-               "1":1,
-               "2":2,
-               "3":3,
-               "4":4,
-               "5":5,
-               "6":6,
-               "7":7,
-               "8":8,
-               "9":9,
-               "10":10,
-               "11":11,
-               "12":12
-            },
-            "Description":"Expiration Month"
-         },
-         {  
-            "Parameter":"token[year]",
-            "Type":"choice",
-            "Required?":true,
-            "Format":{  
-               "2015":2015,
-               "2016":2016,
-               "2017":2017,
-               "2018":2018,
-               "2019":2019,
-               "2020":2020,
-               "2021":2021,
-               "2022":2022
-            },
-            "Description":"Expiration Year"
-         },
-         {  
-            "Parameter":"token[security]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"CVC code"
-         },
-         {  
-            "Parameter":"token[token]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Token Provided for stripe"
-         },
-         {  
-            "Parameter":"source",
-            "Type":"object (SourceWidget)",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[name]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[addressLine1]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[addressLine2]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[addressCity]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[addressState]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[addressZip]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[addressCountry]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[last4]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[expMonth]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"source[expYear]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"amount",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":403,
-            "Description":"Returned when the user is not authorized to purchase"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Return when the Member is not found"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/passwords",
-      "Documentation":"Password Reset Request\n\nInitiates a password reset operation.\n\nWhen a member make a call to this endpoint, the system will generate an email that will be sent to the\nmembers email address on account. The address will contain a link that contains a token, this token\nneeds to be included in a call back to the Password Reset controller.",
-      "Initiates a password reset operation.":"When a member make a call to this endpoint, the system will generate an email that will be sent to the\nmembers email address on account. The address will contain a link that contains a token, this token\nneeds to be included in a call back to the Password Reset controller.",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returns on success"
-         },
-         {  
-            "Status Code":400,
-            "Description":"Reset Password Already Requested"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Member not found"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/points",
-      "Documentation":"Gets the Points values for a Member",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"MemberId",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"EarnedPoints",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"SharedPoints",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"PuchasedPoints",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"PointsGiven",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"PointsRecieved",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"TotalPoints",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned When Successful"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Member Not Found"
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/members/{member}/purchasegiftcards",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"integer|string",
-            "Description":"Email or Id of Member"
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"brand",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"member",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"productId",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/referrals",
-      "Documentation":"Retrieves outstanding Referrals for Member",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         }
-      ],
-      "Filters":[  
-         {  
-            "Name":"offset",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Offset from which to start listing members.",
-               "Default":1
-            }
-         },
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"How many members to return.",
-               "Default":5
-            }
-         },
-         {  
-            "Name":"filter",
-            "Information":{  
-               "Requirement":"\\W+",
-               "Description":null
-            }
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/members/{member}/referrals",
-      "Documentation":"Creates a new Referral for member.",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"memberReferral",
-            "Type":"object (MemberReferralWidget)",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"memberReferral[referral]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"pointTransferReferral",
-            "Type":"object (PointsTransferWidget)",
-            "Required?":false,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"pointTransferReferral[referral]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"pointTransferReferral[pointsToTransfer]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"pointTransferReferral[email]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned on successful creation"
-         },
-         {  
-            "Status Code":400,
-            "Description":"Returned when Form is invalid"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/referrals/{referral}",
-      "Documentation":"Retrieves a single Invitation owned by Member",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         },
-         {  
-            "Name":"referral",
-            "Requirement":"",
-            "Type":"Invitation",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/referreds",
-      "Documentation":"Returns a collection of Members referred by this member",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         }
-      ],
-      "Filters":[  
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Limits the number of Categories to return",
-               "Default":10
-            }
-         },
-         {  
-            "Name":"page",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Which page to request",
-               "Default":1
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned on Success"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/referreds/{referral}",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         },
-         {  
-            "Name":"referral",
-            "Requirement":"",
-            "Type":"MemberReferral",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Code",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Sent",
-            "Type":"boolean",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ExpirationDate",
-            "Type":"DateTime",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned on Success"
-         },
-         {  
-            "Status Code":403,
-            "Description":"Unauthorized Request"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Member Object Not found\n Referral Object not found"
-         }
-      ]
-   },
-   {  
-      "Method":"PATCH",
-      "Path":"/api/v1/members/{member}/registrations/{token}",
-      "Documentation":"Activation Member using token sent as a link in the email.\n\nExample Activate Account\n\n {\n \"token\": \"Not a valid Token\",\n \"member\" : \"mickey@disney.com\",\n \"password\" : {\n \"password\" : \"super_hard_password\",\n \"confirm\" : \"super_hard_password\"\n }\n }",
-      "Example Activate Account":"{\n \"token\": \"Not a valid Token\",\n \"member\" : \"mickey@disney.com\",\n \"password\" : {\n \"password\" : \"super_hard_password\",\n \"confirm\" : \"super_hard_password\"\n }\n }",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         },
-         {  
-            "Name":"token",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"token",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"The Registration Token from an email generated by Pi"
-         },
-         {  
-            "Parameter":"member",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"The email address of the member being activated"
-         },
-         {  
-            "Parameter":"password",
-            "Type":"object (RepeatedType)",
-            "Required?":true,
-            "Format":"",
-            "Description":"The password to be used by the new user."
-         },
-         {  
-            "Parameter":"password[password]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"password[confirm]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"username",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"email",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword",
-            "Type":"",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"FirstName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"LastName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"MobileNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"StreetAddress2",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"City",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"State",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Country",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ZipPostalCode",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/transactions",
-      "Documentation":"List all Point Transactions for a Member",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Credit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Debit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Balance",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"TransactionDate",
-            "Type":"DateTime",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned when successful"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/transactions/{transaction}",
-      "Documentation":"Get a Point Transaction for a Member",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         },
-         {  
-            "Name":"transaction",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Credit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Debit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Balance",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"TransactionDate",
-            "Type":"DateTime",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Returned when Transaction not found"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/wallets",
-      "Documentation":"List all Member Wallet Entries",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         }
-      ],
-      "Filters":[  
-         {  
-            "Name":"limit",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Limits the number of Categories to return",
-               "Default":10
-            }
-         },
-         {  
-            "Name":"page",
-            "Information":{  
-               "Requirement":"\\d+",
-               "Description":"Which page to request",
-               "Default":1
-            }
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Page",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Limit",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pages",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Total",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"DELETE",
-      "Path":"/api/v1/members/{member}/wallets/{wallet}",
-      "Documentation":"Deletes a Member Wallet",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         },
-         {  
-            "Name":"wallet",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":201,
-            "Description":"Returned when successful."
-         },
-         {  
-            "Status Code":404,
-            "Description":"Returned when Member Wallet not found."
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/wallets/{wallet}",
-      "Documentation":"Get a single Wallet Entry",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"",
-            "Type":"Member",
-            "Description":""
-         },
-         {  
-            "Name":"wallet",
-            "Requirement":"",
-            "Type":"Wallet",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Id",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":200,
-            "Description":"Returned when successful"
-         },
-         {  
-            "Status Code":404,
-            "Description":"Returned when the wallet entry is not found"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/wallets/{wallet}/giftcards",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\s+|\\d+",
-            "Type":"string|integer",
-            "Description":"Member To retrieve card for"
-         },
-         {  
-            "Name":"wallet",
-            "Requirement":"\\d+",
-            "Type":"integer",
-            "Description":"Wallet containing Card"
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Amount",
-            "Type":"float",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BarcodeImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BrandId",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BrandName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ExternalCertificateData",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardId",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pin",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Token",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardStatus",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/wallets/{wallet}/giftcards/{card}",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\s+|\\d+",
-            "Type":"string|integer",
-            "Description":"Member To retrieve card for"
-         },
-         {  
-            "Name":"wallet",
-            "Requirement":"\\d+",
-            "Type":"integer",
-            "Description":"Wallet containing Card"
-         },
-         {  
-            "Name":"card",
-            "Requirement":"",
-            "Type":"SubmittedOrderItemGiftCard",
-            "Description":""
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"Amount",
-            "Type":"float",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BarcodeImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BrandId",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"BrandName",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"ExternalCertificateData",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardId",
-            "Type":"integer",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardImageUrl",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardNumber",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Pin",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"Token",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         },
-         {  
-            "Parameter":"GiftCardStatus",
-            "Type":"string",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/members/{member}/wallets/{wallet}/giftcards/{card}/currentbalance",
-      "Documentation":"Gets Current Balance for giftcard.",
-      "Requirements":[  
-         {  
-            "Name":"member",
-            "Requirement":"\\d+|\\s+",
-            "Type":"string|integer",
-            "Description":"Member to look up card by"
-         },
-         {  
-            "Name":"wallet",
-            "Requirement":"\\d+",
-            "Type":"integer",
-            "Description":"Wallet Entry of the card."
-         },
-         {  
-            "Name":"card",
-            "Requirement":"\\d+",
-            "Type":"integer",
-            "Description":"Card To get Balance For"
-         }
-      ],
-      "Return":[  
-         {  
-            "Parameter":"integer",
-            "Type":"object (integer)",
-            "Versions":"*",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/passwordresets/{token}",
-      "Documentation":"Password Reset",
-      "Requirements":[  
-         {  
-            "Name":"token",
-            "Requirement":"",
-            "Type":"",
-            "Description":""
-         }
-      ],
-      "Parameters":[  
-         {  
-            "Parameter":"plainPassword",
-            "Type":"object (RepeatedType)",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword[first]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"plainPassword[second]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/referrals",
-      "Parameters":[  
-         {  
-            "Parameter":"invitation",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Invitation Code"
-         },
-         {  
-            "Parameter":"referral",
-            "Type":"object (UserRegistrationWidget)",
-            "Required?":true,
-            "Format":"",
-            "Description":"New Member to add"
-         },
-         {  
-            "Parameter":"referral[email]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Email Address"
-         },
-         {  
-            "Parameter":"referral[username]",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Username"
-         },
-         {  
-            "Parameter":"referral[firstName]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"referral[lastName]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":""
-         },
-         {  
-            "Parameter":"referral[plainPassword]",
-            "Type":"object (RepeatedType)",
-            "Required?":true,
-            "Format":"",
-            "Description":"Password for user to authenticate as"
-         },
-         {  
-            "Parameter":"referral[plainPassword][first]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Password"
-         },
-         {  
-            "Parameter":"referral[plainPassword][second]",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Confirmed"
-         }
-      ],
-      "Status Codes":[  
-         {  
-            "Status Code":204,
-            "Description":"Referral Taken Advantage of"
-         },
-         {  
-            "Status Code":400,
-            "Description":"Form Validation Error"
-         }
-      ]
-   },
-   {  
-      "Method":"GET",
-      "Path":"/api/v1/token",
-      "Parameters":[  
-         {  
-            "Parameter":"client_secret",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Client Secret"
-         },
-         {  
-            "Parameter":"client_id",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Client ID"
-         },
-         {  
-            "Parameter":"grant_type",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Grant Type requested"
-         },
-         {  
-            "Parameter":"username",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"User Name"
-         },
-         {  
-            "Parameter":"password",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Password for Member Being Authenticated"
-         },
-         {  
-            "Parameter":"refresh_token",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Refresh token to continue session"
-         },
-         {  
-            "Parameter":"response_type",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Response Type"
-         },
-         {  
-            "Parameter":"code",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"The Authorization Code recieved from the authorization server"
-         },
-         {  
-            "Parameter":"redirect_uri",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"URI to redirect to"
-         }
-      ]
-   },
-   {  
-      "Method":"POST",
-      "Path":"/api/v1/token",
-      "Parameters":[  
-         {  
-            "Parameter":"client_secret",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Client Secret"
-         },
-         {  
-            "Parameter":"client_id",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Client ID"
-         },
-         {  
-            "Parameter":"grant_type",
-            "Type":"string",
-            "Required?":true,
-            "Format":"",
-            "Description":"Grant Type requested"
-         },
-         {  
-            "Parameter":"username",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"User Name"
-         },
-         {  
-            "Parameter":"password",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Password for Member Being Authenticated"
-         },
-         {  
-            "Parameter":"refresh_token",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Refresh token to continue session"
-         },
-         {  
-            "Parameter":"response_type",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"Response Type"
-         },
-         {  
-            "Parameter":"code",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"The Authorization Code recieved from the authorization server"
-         },
-         {  
-            "Parameter":"redirect_uri",
-            "Type":"string",
-            "Required?":false,
-            "Format":"",
-            "Description":"URI to redirect to"
-         }
-      ]
-   }
+[
+  {
+    "Method": "GET",
+    "Path": "/api/v1/categories",
+    "Documentation": "Gets a collection of Categories.",
+    "Filters": [
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Limits the number of Categories to return",
+          "Default": 10
+        }
+      },
+      {
+        "Name": "page",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Which page to request",
+          "Default": 1
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/categories/{category}",
+    "Documentation": "Gets a specific category",
+    "Requirements": [
+      {
+        "Name": "category",
+        "Requirement": "",
+        "Type": "Category",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Name",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/categories/{category}/giftcards",
+    "Documentation": "Gets a list of Cards associated with a category",
+    "Requirements": [
+      {
+        "Name": "category",
+        "Requirement": "",
+        "Type": "Category",
+        "Description": ""
+      }
+    ],
+    "Filters": [
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Limits the number of Categories to return",
+          "Default": 10
+        }
+      },
+      {
+        "Name": "page",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Which page to request",
+          "Default": 1
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/giftcards",
+    "Filters": [
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Limits the number of Categories to return",
+          "Default": 10
+        }
+      },
+      {
+        "Name": "page",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Which page to request",
+          "Default": 1
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned on Success"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/giftcards/{card}",
+    "Requirements": [
+      {
+        "Name": "card",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Card Id or Brand ID"
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "piPoints",
+        "Type": "array",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "CardholderAgreementUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "PrivacyPolicyUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ShoppingCartUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "TermsAndConditionsUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "CustomImageTermsAndConditionsHtml",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "CustomImageTermsAndConditionsUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "FaqUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BrandWebsiteUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Alias",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "CardSampleUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LogoHorizontalImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LogoImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LogoThumbnailImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LogoVerticalImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BarcodeType",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "CurrencyCultureCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "DatetimeCultureCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "DefaultCountryCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LanguageCultureCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LegalDisclaimer",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Description",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Name",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "NumericId",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "PurchaseFee",
+        "Type": "float",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "SupportEmailAddress",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "SupportsVariableAmountDenominations",
+        "Type": "boolean",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "VariableAmountDenominationMaximumValue",
+        "Type": "float",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "VariableAmountDenominationMinimumValue",
+        "Type": "float",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BillingCounties",
+        "Type": "array",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BillingStates[]",
+        "Type": "array of strings",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned on Success"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Requested Brand Not Found"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/giftcards/{card}/cardimages",
+    "Documentation": "Gets a list of Cards associated with a category",
+    "Requirements": [
+      {
+        "Name": "card",
+        "Requirement": "",
+        "Type": "Card",
+        "Description": ""
+      }
+    ],
+    "Filters": [
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Limits the number of rows to return",
+          "Default": 10
+        }
+      },
+      {
+        "Name": "page",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Page of result set to return",
+          "Default": 1
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/giftcards/{card}/cardimages/{cardImage}",
+    "Requirements": [
+      {
+        "Name": "card",
+        "Requirement": "",
+        "Type": "Card",
+        "Description": ""
+      },
+      {
+        "Name": "cardImage",
+        "Requirement": "",
+        "Type": "CardImage",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "CustomerCharge",
+        "Type": "float",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ImageCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ImageFileName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "IsCustomUpload",
+        "Type": "boolean",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LastModifiedDate",
+        "Type": "DateTime",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "SortOrder",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ThumbnailImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ImageType",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members",
+    "Documentation": "List all members",
+    "Filters": [
+      {
+        "Name": "offset",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Offset from which to start listing members."
+        }
+      },
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "How many members to return.",
+          "Default": 5
+        }
+      },
+      {
+        "Name": "city",
+        "Information": {
+          "Requirement": "\\S+",
+          "Description": "Filter By City."
+        }
+      },
+      {
+        "Name": "state",
+        "Information": {
+          "Requirement": "\\S+",
+          "Description": "Filter By State."
+        }
+      },
+      {
+        "Name": "email",
+        "Information": {
+          "Requirement": "^.+\\@.+\\..+",
+          "Description": "Filter By Email."
+        }
+      },
+      {
+        "Name": "firstName",
+        "Information": {
+          "Requirement": "\\S+",
+          "Description": "Filter By First Name."
+        }
+      },
+      {
+        "Name": "lastName",
+        "Information": {
+          "Requirement": "\\S+",
+          "Description": "Filter By Last Name."
+        }
+      },
+      {
+        "Name": "mobileNumber",
+        "Information": {
+          "Requirement": "\\S+",
+          "Description": "Filter By Mobile Number."
+        }
+      },
+      {
+        "Name": "phoneNumber",
+        "Information": {
+          "Requirement": "\\S+",
+          "Description": "Filter By Phone Number."
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned when successful"
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/members",
+    "Documentation": "Create a Member from the submitted data. Returns Registration token, to\nbe sent to user.\n\nExample Create Account\n\n {\n \"firstName\": \"Mickey\",\n \"lastName\" : \"Mouse\",\n \"email\" : \"mickey@disney.com\"\n }",
+    "Example Create Account": "{\n \"firstName\": \"Mickey\",\n \"lastName\" : \"Mouse\",\n \"email\" : \"mickey@disney.com\"\n }",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Email or Id of Member"
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "firstName",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "lastName",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "mobileNumber",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "phoneNumber",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "streetAddress",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "streetAddress2",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "city",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "state",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "country",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "zipPostalCode",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "email",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "username",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "username",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "email",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "FirstName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LastName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "MobileNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress2",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "City",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "State",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Country",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ZipPostalCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Email",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 400,
+        "Description": "Returned when the form has errors"
+      }
+    ]
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/api/v1/members/{member}",
+    "Documentation": "Removes Existing Member.",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Email or Id of Member"
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 204,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Return when member not found."
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Email or Id of Member"
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "username",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "email",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "FirstName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LastName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "MobileNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress2",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "City",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "State",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Country",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ZipPostalCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Email",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Return when successful"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Return when the member is not found"
+      }
+    ]
+  },
+  {
+    "Method": "PATCH",
+    "Path": "/api/v1/members/{member}",
+    "Documentation": "Update existing member from the submitted data.\n\nUpdates a Member Record\n\n {\n \"streetAddress\" : \"12345 Nowhere Rd.\"\n }",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Email or Id of Member"
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "firstName",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "lastName",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "mobileNumber",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "phoneNumber",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "streetAddress",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "streetAddress2",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "city",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "state",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "country",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "zipPostalCode",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "username",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "email",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "FirstName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LastName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "MobileNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress2",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "City",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "State",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Country",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ZipPostalCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Email",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 204,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 400,
+        "Description": "Returned when the form has errors"
+      }
+    ]
+  },
+  {
+    "Method": "PUT",
+    "Path": "/api/v1/members/{member}",
+    "Documentation": "Update existing member from the submitted data or create a new member at a specific location.\n\nExample of Updating a member\n\n {\n \"mobileNumber\" : \"619-492-2222\"\n }\n\n\nExample of Inserting a member\n\n {\n \"firstName\" : \"Mickey\",\n \"lastName\" : \"Mouse\",\n \"email\" : \"mickey@disney.com\"\n }",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Email or Id of Member"
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "firstName",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "lastName",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "mobileNumber",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "phoneNumber",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "streetAddress",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "streetAddress2",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "city",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "state",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "country",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "zipPostalCode",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "username",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "email",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "FirstName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LastName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "MobileNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress2",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "City",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "State",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Country",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ZipPostalCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Email",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 201,
+        "Description": "Returned when the Member is created"
+      },
+      {
+        "Status Code": 204,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 400,
+        "Description": "Returned when the form has errors"
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/members/{member}/credittransactions",
+    "Documentation": "Converts Dollars form Credit Card to PiPoints",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "string|integer",
+        "Description": "Member to purchase points for"
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "token",
+        "Type": "object (StripeWidget)",
+        "Required?": true,
+        "Format": "",
+        "Description": "Token provided by Stripe"
+      },
+      {
+        "Parameter": "token[cardNumber]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "CreditCard Number"
+      },
+      {
+        "Parameter": "token[month]",
+        "Type": "choice",
+        "Required?": true,
+        "Format": {
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10,
+          "11": 11,
+          "12": 12
+        },
+        "Description": "Expiration Month"
+      },
+      {
+        "Parameter": "token[year]",
+        "Type": "choice",
+        "Required?": true,
+        "Format": {
+          "2015": 2015,
+          "2016": 2016,
+          "2017": 2017,
+          "2018": 2018,
+          "2019": 2019,
+          "2020": 2020,
+          "2021": 2021,
+          "2022": 2022
+        },
+        "Description": "Expiration Year"
+      },
+      {
+        "Parameter": "token[security]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "CVC code"
+      },
+      {
+        "Parameter": "token[token]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Token Provided for stripe"
+      },
+      {
+        "Parameter": "source",
+        "Type": "object (SourceWidget)",
+        "Required?": true,
+        "Format": "",
+        "Description": "Token provided by Stripe"
+      },
+      {
+        "Parameter": "source[cardNumber]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "CreditCard Number"
+      },
+      {
+        "Parameter": "source[month]",
+        "Type": "choice",
+        "Required?": true,
+        "Format": {
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10,
+          "11": 11,
+          "12": 12
+        },
+        "Description": "Expiration Month"
+      },
+      {
+        "Parameter": "source[year]",
+        "Type": "choice",
+        "Required?": true,
+        "Format": {
+          "2015": 2015,
+          "2016": 2016,
+          "2017": 2017,
+          "2018": 2018,
+          "2019": 2019,
+          "2020": 2020,
+          "2021": 2021,
+          "2022": 2022
+        },
+        "Description": "Expiration Year"
+      },
+      {
+        "Parameter": "source[security]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "CVC code"
+      },
+      {
+        "Parameter": "source[token]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Token Provided for stripe"
+      },
+      {
+        "Parameter": "amount",
+        "Type": "object (MoneyType)",
+        "Required?": true,
+        "Format": "",
+        "Description": "Token provided by Stripe"
+      },
+      {
+        "Parameter": "amount[cardNumber]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "CreditCard Number"
+      },
+      {
+        "Parameter": "amount[month]",
+        "Type": "choice",
+        "Required?": true,
+        "Format": {
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10,
+          "11": 11,
+          "12": 12
+        },
+        "Description": "Expiration Month"
+      },
+      {
+        "Parameter": "amount[year]",
+        "Type": "choice",
+        "Required?": true,
+        "Format": {
+          "2015": 2015,
+          "2016": 2016,
+          "2017": 2017,
+          "2018": 2018,
+          "2019": 2019,
+          "2020": 2020,
+          "2021": 2021,
+          "2022": 2022
+        },
+        "Description": "Expiration Year"
+      },
+      {
+        "Parameter": "amount[security]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "CVC code"
+      },
+      {
+        "Parameter": "amount[token]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Token Provided for stripe"
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 403,
+        "Description": "Returned when the user is not authorized to purchase"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Return when the Member is not found"
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/members/{member}/giftcards",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "integer|string",
+        "Description": "Email or Id of Member"
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "brand",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "member",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "productId",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/passwords",
+    "Documentation": "Password Reset Request\n\nInitiates a password reset operation.\n\nWhen a member make a call to this endpoint, the system will generate an email that will be sent to the\nmembers email address on account. The address will contain a link that contains a token, this token\nneeds to be included in a call back to the Password Reset controller.",
+    "Initiates a password reset operation.": "When a member make a call to this endpoint, the system will generate an email that will be sent to the\nmembers email address on account. The address will contain a link that contains a token, this token\nneeds to be included in a call back to the Password Reset controller.",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returns on success"
+      },
+      {
+        "Status Code": 400,
+        "Description": "Reset Password Already Requested"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Member not found"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/points",
+    "Documentation": "Gets the Points values for a Member",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "MemberId",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "EarnedPoints",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "SharedPoints",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "PuchasedPoints",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "PointsGiven",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "PointsRecieved",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "TotalPoints",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned When Successful"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Member Not Found"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/referrals",
+    "Documentation": "Retrieves outstanding Referrals for Member",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      }
+    ],
+    "Filters": [
+      {
+        "Name": "offset",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Offset from which to start listing members.",
+          "Default": 1
+        }
+      },
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "How many members to return.",
+          "Default": 5
+        }
+      },
+      {
+        "Name": "filter",
+        "Information": {
+          "Requirement": "\\W+",
+          "Description": null
+        }
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/members/{member}/referrals",
+    "Documentation": "Creates a new Referral for member.",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "memberReferral",
+        "Type": "object (MemberReferralWidget)",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "memberReferral[referral]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "pointTransferReferral",
+        "Type": "object (PointsTransferWidget)",
+        "Required?": false,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "pointTransferReferral[referral]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned on successful creation"
+      },
+      {
+        "Status Code": 400,
+        "Description": "Returned when Form is invalid"
+      },
+      {
+        "Status Code": 402,
+        "Description": "Returned when member has insufficient balance to transfer points"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/referrals/{referral}",
+    "Documentation": "Retrieves a single Invitation owned by Member",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      },
+      {
+        "Name": "referral",
+        "Requirement": "",
+        "Type": "Invitation",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/referreds",
+    "Documentation": "Returns a collection of Members referred by this member",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      }
+    ],
+    "Filters": [
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Limits the number of Categories to return",
+          "Default": 10
+        }
+      },
+      {
+        "Name": "page",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Which page to request",
+          "Default": 1
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned on Success"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/referreds/{referral}",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      },
+      {
+        "Name": "referral",
+        "Requirement": "",
+        "Type": "MemberReferral",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Code",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Sent",
+        "Type": "boolean",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ExpirationDate",
+        "Type": "DateTime",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned on Success"
+      },
+      {
+        "Status Code": 403,
+        "Description": "Unauthorized Request"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Member Object Not found\n Referral Object not found"
+      }
+    ]
+  },
+  {
+    "Method": "PATCH",
+    "Path": "/api/v1/members/{member}/registrations/{token}",
+    "Documentation": "Activation Member using token sent as a link in the email.\n\nExample Activate Account\n\n {\n \"token\": \"Not a valid Token\",\n \"member\" : \"mickey@disney.com\",\n \"password\" : {\n \"password\" : \"super_hard_password\",\n \"confirm\" : \"super_hard_password\"\n }\n }",
+    "Example Activate Account": "{\n \"token\": \"Not a valid Token\",\n \"member\" : \"mickey@disney.com\",\n \"password\" : {\n \"password\" : \"super_hard_password\",\n \"confirm\" : \"super_hard_password\"\n }\n }",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      },
+      {
+        "Name": "token",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "token",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "The Registration Token from an email generated by Pi"
+      },
+      {
+        "Parameter": "member",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "The email address of the member being activated"
+      },
+      {
+        "Parameter": "password",
+        "Type": "object (RepeatedType)",
+        "Required?": true,
+        "Format": "",
+        "Description": "The password to be used by the new user."
+      },
+      {
+        "Parameter": "password[password]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "password[confirm]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "username",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "email",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword",
+        "Type": "",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "FirstName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "LastName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "MobileNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "StreetAddress2",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "City",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "State",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Country",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ZipPostalCode",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Email",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/transactions",
+    "Documentation": "List all Point Transactions for a Member",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Credit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Debit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Balance",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "TransactionDate",
+        "Type": "DateTime",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned when successful"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/transactions/{transaction}",
+    "Documentation": "Get a Point Transaction for a Member",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      },
+      {
+        "Name": "transaction",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Credit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Debit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Balance",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "TransactionDate",
+        "Type": "DateTime",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Returned when Transaction not found"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/wallets",
+    "Documentation": "List all Member Wallet Entries",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      }
+    ],
+    "Filters": [
+      {
+        "Name": "limit",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Limits the number of Categories to return",
+          "Default": 10
+        }
+      },
+      {
+        "Name": "page",
+        "Information": {
+          "Requirement": "\\d+",
+          "Description": "Which page to request",
+          "Default": 1
+        }
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Page",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Limit",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pages",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Total",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/api/v1/members/{member}/wallets/{wallet}",
+    "Documentation": "Deletes a Member Wallet",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      },
+      {
+        "Name": "wallet",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 201,
+        "Description": "Returned when successful."
+      },
+      {
+        "Status Code": 404,
+        "Description": "Returned when Member Wallet not found."
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/wallets/{wallet}",
+    "Documentation": "Get a single Wallet Entry",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "",
+        "Type": "Member",
+        "Description": ""
+      },
+      {
+        "Name": "wallet",
+        "Requirement": "",
+        "Type": "Wallet",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 200,
+        "Description": "Returned when successful"
+      },
+      {
+        "Status Code": 404,
+        "Description": "Returned when the wallet entry is not found"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/wallets/{wallet}/giftcards",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\s+|\\d+",
+        "Type": "string|integer",
+        "Description": "Member To retrieve card for"
+      },
+      {
+        "Name": "wallet",
+        "Requirement": "\\d+",
+        "Type": "integer",
+        "Description": "Wallet containing Card"
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Amount",
+        "Type": "float",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BarcodeImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BrandId",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BrandName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ExternalCertificateData",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardId",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pin",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Token",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardStatus",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/wallets/{wallet}/giftcards/{card}",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\s+|\\d+",
+        "Type": "string|integer",
+        "Description": "Member To retrieve card for"
+      },
+      {
+        "Name": "wallet",
+        "Requirement": "\\d+",
+        "Type": "integer",
+        "Description": "Wallet containing Card"
+      },
+      {
+        "Name": "card",
+        "Requirement": "",
+        "Type": "SubmittedOrderItemGiftCard",
+        "Description": ""
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "Amount",
+        "Type": "float",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BarcodeImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BrandId",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "BrandName",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "ExternalCertificateData",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardId",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardImageUrl",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardNumber",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Pin",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Token",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "GiftCardStatus",
+        "Type": "string",
+        "Versions": "*",
+        "Description": ""
+      },
+      {
+        "Parameter": "Id",
+        "Type": "integer",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/members/{member}/wallets/{wallet}/giftcards/{card}/currentbalance",
+    "Documentation": "Gets Current Balance for giftcard.",
+    "Requirements": [
+      {
+        "Name": "member",
+        "Requirement": "\\d+|\\s+",
+        "Type": "string|integer",
+        "Description": "Member to look up card by"
+      },
+      {
+        "Name": "wallet",
+        "Requirement": "\\d+",
+        "Type": "integer",
+        "Description": "Wallet Entry of the card."
+      },
+      {
+        "Name": "card",
+        "Requirement": "\\d+",
+        "Type": "integer",
+        "Description": "Card To get Balance For"
+      }
+    ],
+    "Return": [
+      {
+        "Parameter": "integer",
+        "Type": "object (integer)",
+        "Versions": "*",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/passwordresets/{token}",
+    "Documentation": "Password Reset",
+    "Requirements": [
+      {
+        "Name": "token",
+        "Requirement": "",
+        "Type": "",
+        "Description": ""
+      }
+    ],
+    "Parameters": [
+      {
+        "Parameter": "plainPassword",
+        "Type": "object (RepeatedType)",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword[first]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "plainPassword[second]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/referrals",
+    "Parameters": [
+      {
+        "Parameter": "invitation",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Invitation Code"
+      },
+      {
+        "Parameter": "referral",
+        "Type": "object (UserRegistrationWidget)",
+        "Required?": true,
+        "Format": "",
+        "Description": "New Member to add"
+      },
+      {
+        "Parameter": "referral[email]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Email Address"
+      },
+      {
+        "Parameter": "referral[username]",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Username"
+      },
+      {
+        "Parameter": "referral[firstName]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "referral[lastName]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": ""
+      },
+      {
+        "Parameter": "referral[plainPassword]",
+        "Type": "object (RepeatedType)",
+        "Required?": true,
+        "Format": "",
+        "Description": "Password for user to authenticate as"
+      },
+      {
+        "Parameter": "referral[plainPassword][first]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Password"
+      },
+      {
+        "Parameter": "referral[plainPassword][second]",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Confirmed"
+      }
+    ],
+    "Status Codes": [
+      {
+        "Status Code": 204,
+        "Description": "Referral Taken Advantage of"
+      },
+      {
+        "Status Code": 400,
+        "Description": "Form Validation Error"
+      }
+    ]
+  },
+  {
+    "Method": "GET",
+    "Path": "/api/v1/token",
+    "Parameters": [
+      {
+        "Parameter": "client_secret",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Client Secret"
+      },
+      {
+        "Parameter": "client_id",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Client ID"
+      },
+      {
+        "Parameter": "grant_type",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Grant Type requested"
+      },
+      {
+        "Parameter": "username",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "User Name"
+      },
+      {
+        "Parameter": "password",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Password for Member Being Authenticated"
+      },
+      {
+        "Parameter": "refresh_token",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Refresh token to continue session"
+      },
+      {
+        "Parameter": "response_type",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Response Type"
+      },
+      {
+        "Parameter": "code",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "The Authorization Code recieved from the authorization server"
+      },
+      {
+        "Parameter": "redirect_uri",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "URI to redirect to"
+      }
+    ]
+  },
+  {
+    "Method": "POST",
+    "Path": "/api/v1/token",
+    "Parameters": [
+      {
+        "Parameter": "client_secret",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Client Secret"
+      },
+      {
+        "Parameter": "client_id",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Client ID"
+      },
+      {
+        "Parameter": "grant_type",
+        "Type": "string",
+        "Required?": true,
+        "Format": "",
+        "Description": "Grant Type requested"
+      },
+      {
+        "Parameter": "username",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "User Name"
+      },
+      {
+        "Parameter": "password",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Password for Member Being Authenticated"
+      },
+      {
+        "Parameter": "refresh_token",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Refresh token to continue session"
+      },
+      {
+        "Parameter": "response_type",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "Response Type"
+      },
+      {
+        "Parameter": "code",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "The Authorization Code recieved from the authorization server"
+      },
+      {
+        "Parameter": "redirect_uri",
+        "Type": "string",
+        "Required?": false,
+        "Format": "",
+        "Description": "URI to redirect to"
+      }
+    ]
+  }
 ]

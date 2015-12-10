@@ -71,7 +71,7 @@ function genShortCodes() {
 }
 
 //genShortCodes();
-//$verbose = true;
+$verbose = false;
 if ($verbose) {
 	$verbose = false;
 	$testPage = file_get_contents("tests/newPiSyntax.js");

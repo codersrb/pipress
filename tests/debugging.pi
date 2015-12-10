@@ -1,5 +1,16 @@
-[piEcho: PI_member]
 [piDefine:"1nf0oilqavc0g4ock8k800cswgoo0s04wgk8skgcg00044ogog"->client_secret]
 [piDefine:"2_2f1e18hbyyasgoco40o00o0k4c0ksccg0kso44ok80w8884w08"->client_id]
 [pi:getToken(client_secret: client_secret, client_id: client_id, grant_type: "client_credentials")]
-[piEcho:$]
+[pi:setAuthToken(token: $.access_token)]
+
+[piDefine:"test@testMember.com"->member_email]
+[pi:loginUser(username:member_email, password:"test123", client_id: client_id, client_secret: client_secret, grant_type: "password")]
+[pi:setAuthToken(token: $.access_token)]
+
+[pi:getMemberWallets(member: member_email)]
+[piDefine: $._embedded.items->member_wallets]
+[piDefine:member_wallets.0->first_card]
+
+<img src=[piEcho: '"' + first_card.CardImage + '"']/>
+
+[piStop:0]

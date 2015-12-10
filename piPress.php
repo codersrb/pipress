@@ -3,7 +3,7 @@
 * Plugin Name: piPress
 * Plugin URI: http://piSociety.com/
 * Description: piSociety API plugin for WordPress
-* Version: 1.0.1a
+* Version: 1.0.2
 * Author: piSociety
 * Author URI: https://www.piSociety.com/
 * License: N/A
