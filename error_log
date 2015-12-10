@@ -1,0 +1,5 @@
+[18-Nov-2015 18:44:26 Etc/GMT] PHP Notice:  Undefined variable: verbose in /home/worksamples/public_html/wp/pisociety/wp-content/plugins/pipress/tests/piTest.php on line 75
+[18-Nov-2015 18:44:26 Etc/GMT] PHP Notice:  Undefined variable: dquotefirst in /home/worksamples/public_html/wp/pisociety/wp-content/plugins/pipress/src/piSyntax.php on line 66
+[18-Nov-2015 18:44:26 Etc/GMT] PHP Notice:  Undefined variable: dquotefirst in /home/worksamples/public_html/wp/pisociety/wp-content/plugins/pipress/src/piSyntax.php on line 66
+[18-Nov-2015 18:44:26 Etc/GMT] PHP Notice:  Undefined variable: dquotefirst in /home/worksamples/public_html/wp/pisociety/wp-content/plugins/pipress/src/piSyntax.php on line 66
+[18-Nov-2015 18:44:26 Etc/GMT] PHP Notice:  Undefined index: client_token in /home/worksamples/public_html/wp/pisociety/wp-content/plugins/pipress/src/piAPI.php on line 750

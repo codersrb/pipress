@@ -1,0 +1,5 @@
+[piEcho: PI_member]
+[piDefine:"1nf0oilqavc0g4ock8k800cswgoo0s04wgk8skgcg00044ogog"->client_secret]
+[piDefine:"2_2f1e18hbyyasgoco40o00o0k4c0ksccg0kso44ok80w8884w08"->client_id]
+[pi:getToken(client_secret: client_secret, client_id: client_id, grant_type: "client_credentials")]
+[piEcho:$]
